@@ -4,7 +4,7 @@
     {{ if not .Params.menu }}
       <p>
         <i>
-          <time
+          Published on <time
             style="color: var(--text-light);"
             datetime="{{ .Date.Format "2006-01-02" }}"
             pubdate
@@ -12,6 +12,10 @@
             {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
           </time>
         </i>
+        {{ if .Params.author }}
+              <span>by {{ .Params.author }}</span>
+              </span>
+            {{ end }}
       </p>
     {{ end }}
   {{ end }}
