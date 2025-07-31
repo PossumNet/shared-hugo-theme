@@ -26,6 +26,7 @@ unsafe = true
 hideMadeWithLine = true
 hideRSSLink = false
 math = true
+contactEmail = "nobody@example.com"
 
 [menus]
   [[menus.main]]
