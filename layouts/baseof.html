@@ -34,6 +34,10 @@
       <meta name="fediverse:creator" content="{{ . }}" />
     {{ end }}
 
+    {{ if .Param "math" }}
+      {{ partialCached "math.html" . }}
+    {{ end }}
+
 
     <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
