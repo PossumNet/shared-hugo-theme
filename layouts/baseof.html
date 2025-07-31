@@ -17,8 +17,9 @@
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
     {{ $simple := resources.Get "simple.css" }}
-    {{ $style := resources.Get "style.css" | resources.ExecuteAsTemplate "style.css" . }}
-    {{ $css := slice $simple $style | resources.Concat "bundle.css" | minify }}
+    {{ $style := resources.Get "style.css" }}
+    {{ $shared := resources.Get "shared.css" | resources.ExecuteAsTemplate "shared.css" . }}
+    {{ $css := slice $simple $style $shared | resources.Concat "bundle.css" | minify }}
     <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 
     {{ with .Params.style }}
