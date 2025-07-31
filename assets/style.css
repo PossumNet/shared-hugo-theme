@@ -63,12 +63,12 @@ div.highlight pre span {
   :root,
   ::backdrop {
    /* Color Palette */
-   --paletteA: #f7f7f7; /* used for background gradient */
-   --paletteB: #f7f7f7; /* used for background gradient */
-   --paletteC: #000000; /* used for link hover */
-   --paletteD: #76a048; /* used for link accent */
-   --paletteE: #e982b6; /* black */
-   --paletteF: #333333; /* used for dark text */
+   --paletteA: {{ .Site.Params.paletteA | default "#f7f7f7" }}; /* used for background gradient */
+   --paletteB: {{ .Site.Params.paletteB | default "#f7f7f7" }}; /* used for background gradient */
+   --paletteC: {{ .Site.Params.paletteC | default "#000000" }}; /* used for link hover */
+   --paletteD: {{ .Site.Params.paletteD | default "#76a048" }}; /* used for link accent */
+   --paletteE: {{ .Site.Params.paletteE | default "#e982b6" }}; /* black */
+   --paletteF: {{ .Site.Params.paletteF | default "#333333" }}; /* used for dark text */
 
    /* Gradients */
    --basegradientl: var(--paletteA);
