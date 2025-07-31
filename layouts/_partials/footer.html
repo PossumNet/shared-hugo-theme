@@ -2,10 +2,10 @@
   <span>{{ . }}</span>
 {{ end }}
   <span>
+    {{ if .Site.Copyright }}|{{ end }}
     <a href="privacy">Privacy Policy</a>
     |
     <a href="{{ .Site.Params.contactEmail }}">{{ .Site.Params.contactEmail }}</a>
-    {{ if .Site.Copyright }}|{{ end }}
   </span>
 {{ if not .Site.Params.hideMadeWithLine }}
   <span>
