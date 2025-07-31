@@ -1,0 +1,472 @@
+body {
+  -webkit-text-size-adjust: 100%; /* prevent Mobile Safari from adjusting font sizes */
+}
+
+nav a.current {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+div.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.blog-posts {
+  padding-left: 0;
+}
+
+ul.blog-posts > li {
+  list-style-type: none;
+  display: flex;
+}
+
+ul.blog-posts > li span {
+  flex: 0 0 130px;
+  color: var(--text-light);
+}
+
+nav#TableOfContents > ul {
+  margin-block-start: 0;
+}
+
+.icon {
+  vertical-align: sub;
+  padding-right: 0.25rem;
+  display: inline-block;
+  width: 1em;
+  height: 1.3em;
+  margin-right: 0.2rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+div.highlight code,
+div.highlight pre,
+div.highlight pre span {
+  color: inherit;
+}
+
+
+/* messy css that needs to be cleaned up */
+
+@font-face {
+	font-family: 'primary_font';
+	src: url('resources/fonts/SuisseIntlMono-Thin-WebTrial.eot'),
+		 /*url('resources/fonts/SuisseIntlMono-Thin-WebTrial.svg') format('svg');*/
+}
+
+/* ==========================================================================
+  Variables and Root Settings
+  ========================================================================== */
+  :root,
+  ::backdrop {
+   /* Color Palette */
+   --paletteA: #f7f7f7; /* used for background gradient */
+   --paletteB: #f7f7f7; /* used for background gradient */
+   --paletteC: #000000; /* used for link hover */
+   --paletteD: #76a048; /* used for link accent */
+   --paletteE: #e982b6; /* black */
+   --paletteF: #333333; /* used for dark text */
+
+   /* Gradients */
+   --basegradientl: var(--paletteA);
+   --basegradientr: var(--paletteB);
+   --accentgradientl: var(--paletteC);
+   --accentgradientr: var(--paletteD);
+   --bg-gradient: linear-gradient(to right, var(--basegradientl), var(--basegradientr));
+   --accent-gradient: linear-gradient(to right, var(--accentgradientl), var(--accentgradientr));
+
+   /* Theme Colors */
+   --bg: var(--paletteA);
+   --accent-bg: var(--paletteD);
+   --text: var(--paletteF);
+   --text-light: var(--paletteF);
+   --text-dark: var(--paletteF);
+   --accent: var(--paletteD);
+   --accent-hover: var(--paletteC);
+   --accent-text: var(--bg);
+   --code: #f06292;
+   --preformatted: #ccc;
+   --disabled: #111;
+
+   /* Typography */
+   --sans-font: 'primary_font', Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+
+    --serif-font: "Merriweather", "Times New Roman", Times, Georgia, Garamond, serif;
+  }
+
+  /* ==========================================================================
+    Dark Mode Settings
+    ========================================================================== */
+  @media (prefers-color-scheme: dark) {
+   :root,
+   ::backdrop {
+     color-scheme: dark;
+     --bg: var(--paletteA);
+     --accent-bg: var(--paletteD);
+     --text: var(--paletteF);
+     --text-light: var(--paletteF);
+     --accent: var(--paletteD);
+     --accent-hover: var(--paletteC);
+     --accent-text: var(--bg);
+   }
+  }
+
+  /* ==========================================================================
+    Typography
+    ========================================================================== */
+  h1 {
+   font-size: 1.6rem;
+   color: var(--text-dark);
+   font-family: var(--sans-font);
+  }
+  h2 {
+   font-size: 1.5rem;
+   margin-top: 3rem;
+   color: var(--text-dark);
+   font-family: var(--sans-font);
+  }
+  h3 {
+   font-size: 1.4rem;
+   margin-top: 3rem;
+   color: var(--text-dark);
+   font-family: var(--sans-font);
+  }
+  h4 {
+   font-size: 1.3rem;
+   color: var(--text-dark);
+   font-family: var(--sans-font);
+  }
+  h5 {
+   font-size: 1.15rem;
+   color: var(--text-dark);
+   font-family: var(--sans-font);
+  }
+  h6 {
+   font-size: 0.96rem;
+   color: var(--text-dark);
+   font-family: var(--sans-font);
+  }
+
+  /* ==========================================================================
+    Layout Components
+    ========================================================================== */
+  /* Main Content */
+  body {
+   background-image: var(--bg-gradient);
+   color: var(--text-light);
+   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--sans-font);
+  font-size: 1rem;
+    line-height: 1.3;
+    min-height: 10vh;
+  }
+
+  polaroid {
+
+}
+
+polaroidlabel {
+  text-align: center;
+  font-family: var(--sans-font);
+}
+
+div.notice-box {
+    display: grid;
+    grid-template-columns: 1fr min(50rem,90%)1fr;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+div.notice {
+    background: var(--paletteB);
+    color: var(--text-light);
+    font-size: 1.15rem;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    grid-column: 2;
+
+}
+
+  main {
+    background-color: white;
+   padding-top: 0;
+   padding-bottom: 0;
+
+   flex: 1;
+      max-width: 80rem;
+      min-width: 40rem;
+      margin: 0 auto;
+  }
+
+  main > p {
+   margin: 0;
+  }
+
+  main > content {
+
+
+   display: grid;
+   grid-template-columns: 1fr min(45rem, 90%) 1fr;
+   padding: 2.5rem;
+   border-radius: 15px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  main > content > * {
+   grid-column: 2;
+
+  }
+
+  /* *Styling the first character of a paragraph */
+  .home-page-content p:first-of-type::first-letter,
+  .menu-page-content p:first-of-type::first-letter {
+      font-size: 4rem;
+      float: left;
+      line-height: 0.65;
+      padding: 0.25rem 0.5rem 0 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: inherit;
+      font-family: var(--sans-font);
+  }
+
+  /* Header & Navigation */
+  body > header {
+   background-image: var(--bg-gradient);
+   border-bottom: 0;
+  }
+
+    body > header > p {
+      font-size: 1.5rem;
+    }
+
+  header > nav {
+   background: var(--accent-gradient);
+   -webkit-background-clip: text;
+   background-clip: text;
+  }
+
+
+  /* Logo Section */
+  body > header > logobar > logocontainer {
+   padding: 1rem 1rem 0 1rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+  }
+
+  body > header > logobar > logocontainer > logoimage {
+   grid-column: 2;
+   display: inline-block;
+   flex: 20%;
+   max-width: 15rem;
+   min-width: 10rem;
+  }
+
+  body > header > logobar > logocontainer > logotext {
+   padding: 25px;
+   color: var(--text-light);
+   background-image: url("/KnowledgGraphScribbles-13.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   flex: 70%;
+   max-width: 40rem;
+   min-height: 15rem;
+  }
+
+  /* Footer */
+  body > footer {
+    background: var(--bg-gradient);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    height: 80px;
+    flex-shrink: 0;
+
+  }
+
+  @media (max-width: 768px) {
+  body > footer {
+    height: 60px;
+    padding: 0.5rem;
+  }
+}
+
+  /* ==========================================================================
+    Navigation Components
+    ========================================================================== */
+  #_site_container{
+    background-color:white;
+    color:black;
+  }
+
+  #home-page-description{
+    color:#ffffff;
+    font-size: 2.5rem;
+  }
+
+
+    .container {
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto;
+  }
+
+  .nav-container {
+   background: var(--bg-gradient);
+   /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+  }
+
+  .nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 0;
+  }
+
+  /* Navigation Brand */
+  .nav-brand {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+  }
+
+  .nav-logo-img {
+   height: 7rem;
+   width: auto;
+  }
+
+  .nav-logo-text {
+   font-size: 1.5rem;
+   font-weight: bold;
+   text-decoration: none;
+   color: var(--text);
+   opacity: 0;
+   position: absolute;
+   transform: translateX(-100%);
+   transition: all 0.3s ease;
+  }
+
+  /* Navigation Menu */
+  .nav-menu {
+   display: flex;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   gap: 1rem;
+  }
+
+  .nav-menu a,
+  .nav-menu a:visited {
+  margin: 0 0.5rem 1rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--standard-border-radius);
+  color: var(--text);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-menu  a:hover,
+.nav-menu a.current,
+.nav-menu a[aria-current="page"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+
+  .nav-link {
+   color: var(--paletteF);
+   text-decoration: none;
+   font-weight: 500;
+   padding: 0.5rem 1rem;
+   border: 2px solid var(--paletteF);
+   border-radius: 4px;
+   transition: all 0.3s ease;
+   opacity: 0.8;
+   font-family: var(--sans-font);
+   -webkit-backdrop-filter: sepia(100%);
+   backdrop-filter: sepia(100%);
+  }
+
+  .nav-link:hover {
+   opacity: 1;
+   background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-link.current {
+   opacity: 1;
+   background: rgba(255, 255, 255, 0.15);
+   border-color: var(--paletteF);
+  }
+
+  .menu-button {
+   display: none;
+   background: none;
+   border: none;
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: var(--text-light);
+   padding: 0.5rem;
+  }
+
+  /* Removing border around logo due to theme css */
+  header > nav a:has(img) {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+  /* ==========================================================================
+    Media Queries
+    ========================================================================== */
+  @media (max-width: 768px) {
+   .menu-button {
+     display: block;
+   }
+
+   .nav-menu {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     right: 0;
+     background: var(--bg);
+     flex-direction: column;
+     padding: 1rem;
+     gap: 0.5rem;
+   }
+
+   .nav-menu.active {
+     display: flex;
+   }
+
+   .nav-link {
+     text-align: center;
+     display: block;
+   }
+
+  .home-page-heading {
+    color: #000 !important;
+    font-size: 240px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 100px 0;
+  }
+
