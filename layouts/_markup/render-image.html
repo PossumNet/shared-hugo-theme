@@ -1,0 +1,7 @@
+{{ $image := .Page.Resources.GetMatch .Destination }}
+{{ if $image }}
+  {{ $resized := $image.Fit "800x800" }}
+  <img src="{{ $resized.RelPermalink }}" alt="{{ .Text }}" style="width:100%; border-radius: 10%;" />
+{{ else }}
+  <img src="{{ .Destination }}" alt="{{ .Text }}" />
+{{ end }}
