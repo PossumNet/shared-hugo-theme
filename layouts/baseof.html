@@ -19,7 +19,8 @@
     {{ $simple := resources.Get "simple.css" }}
     {{ $style := resources.Get "style.css" }}
     {{ $shared := resources.Get "shared.css" | resources.ExecuteAsTemplate "shared.css" . }}
-    {{ $css := slice $simple $style $shared | resources.Concat "bundle.css" | minify }}
+    {{ $css_vars := resources.Get "css_vars.css" | resources.ExecuteAsTemplate "css_vars.css" . }}
+    {{ $css := slice $simple $style $css_vars $shared | resources.Concat "bundle.css" | minify }}
     <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 
     {{ with .Params.style }}

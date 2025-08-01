@@ -27,12 +27,6 @@ hideMadeWithLine = true
 hideRSSLink = false
 math = true
 contactEmail = "nobody@example.com"
-paletteA = "#ffffff"
-paletteB = "#ffffff"
-paletteC = "#000000"
-paletteD = "#76a048"
-paletteE = "#e982b6"
-paletteF = "#333333"
 
 [menus]
   [[menus.main]]
