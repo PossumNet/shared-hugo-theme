@@ -3,9 +3,9 @@
 {{ end }}
   <span>
     {{ if .Site.Copyright }}|{{ end }}
-    <a href="privacy">Privacy Policy</a>
+    <a href="/privacy">Privacy Policy</a>
     |
-    <a href="{{ .Site.Params.contactEmail }}">{{ .Site.Params.contactEmail }}</a>
+    <a href="mailto:{{ .Site.Params.contactEmail }}">{{ .Site.Params.contactEmail }}</a>
   </span>
 {{ if not .Site.Params.hideMadeWithLine }}
   <span>
