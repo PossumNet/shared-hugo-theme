@@ -6,6 +6,7 @@ description = ""
 date = {{ .Date }}
 tags = []
 toc = false
+style = '/custom.css'
 [params]
   author = 'Anonymous'
 draft = true
