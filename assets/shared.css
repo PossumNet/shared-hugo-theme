@@ -103,3 +103,24 @@ body > footer {
     padding: 0.5rem;
   }
 }
+
+/* drop down nav menu */
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: var(--bg, white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+}
+
+nav ul li ul li {
+  width: 200px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
