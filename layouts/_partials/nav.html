@@ -23,28 +23,30 @@
   {{ end }}
   </li>
 {{ end }}
-{{ range .Site.Sections }}
-  <li>
-  <a
-    href="{{ .Permalink }}"
-    {{ if eq $currentPage . }}class="current"{{ end }}
-    >{{ .Title }}</a
-  >
-  {{ if .Sections }}
-    <ul>
-    {{ range .Sections }}
-      <li>
-      <a
-        href="{{ .Permalink }}"
-        class="child-link"
-        {{ if eq $currentPage . }}class="current"{{ end }}
-        >{{ .Title }}</a
-      >
-      </li>
+{{ if .Site.Params.includeSectionsInMenu }}
+  {{ range .Site.Sections }}
+    <li>
+    <a
+      href="{{ .Permalink }}"
+      {{ if eq $currentPage . }}class="current"{{ end }}
+      >{{ .Title }}</a
+    >
+    {{ if .Sections }}
+      <ul>
+      {{ range .Sections }}
+        <li>
+        <a
+          href="{{ .Permalink }}"
+          class="child-link"
+          {{ if eq $currentPage . }}class="current"{{ end }}
+          >{{ .Title }}</a
+        >
+        </li>
+      {{ end }}
+        </ul>
     {{ end }}
-      </ul>
+    </li>
   {{ end }}
-  </li>
 {{ end }}
 {{ if not .Site.Params.hideRSSLink }}
   <li>
