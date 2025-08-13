@@ -23,6 +23,29 @@
   {{ end }}
   </li>
 {{ end }}
+{{ range .Site.Sections }}
+  <li>
+  <a
+    href="{{ .Permalink }}"
+    {{ if eq $currentPage . }}class="current"{{ end }}
+    >{{ .Title }}</a
+  >
+  {{ if .Sections }}
+    <ul>
+    {{ range .Sections }}
+      <li>
+      <a
+        href="{{ .Permalink }}"
+        class="child-link"
+        {{ if eq $currentPage . }}class="current"{{ end }}
+        >{{ .Title }}</a
+      >
+      </li>
+    {{ end }}
+      </ul>
+  {{ end }}
+  </li>
+{{ end }}
 {{ if not .Site.Params.hideRSSLink }}
   <li>
   <a href="{{ relURL "index.xml" }}">
